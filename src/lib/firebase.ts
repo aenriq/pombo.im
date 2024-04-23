@@ -2,7 +2,13 @@
 import { initializeApp, FirebaseApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {
+	getAuth,
+	setPersistence,
+	signInWithPopup,
+	GoogleAuthProvider,
+	browserLocalPersistence,
+} from "firebase/auth";
 
 const firebaseConfig = {
 	apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -14,12 +20,27 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app: FirebaseApp = initializeApp(firebaseConfig);
+const app: FirebaseApp = initializeApp(firebaseConfig, "client");
 
 // Initialize Firestore and Storage
 const db = getFirestore(app);
 const storage = getStorage(app);
+
+// Initialize Firebase Auth and GoogleAuthProvider
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
-export { app, db, storage, auth, provider };
+// Function to initiate sign-in with Google
+const signInWithGoogle = async () => {
+	await setPersistence(auth, browserLocalPersistence)
+		.then(async () => {
+			return signInWithPopup(auth, provider);
+		})
+		.catch((error) => {
+			const errorCode = error.code;
+			const errorMessage = error.message;
+			console.error(`Error during sign-in: ${errorCode}, ${errorMessage}`);
+		});
+};
+
+export { app, db, storage, auth, provider, signInWithGoogle };
