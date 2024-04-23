@@ -16,17 +16,15 @@ export default function RootLayout({
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<body>
-				<main className="main-grid">
-					<ThemeProvider
-						attribute="class"
-						defaultTheme="system"
-						enableSystem
-						disableTransitionOnChange
-					>
-						{children}
-					</ThemeProvider>
-				</main>
-				<Toaster />
+				<ThemeProvider
+					attribute="data-theme"
+					defaultTheme="system"
+					enableSystem
+					disableTransitionOnChange
+				>
+					<main className="main-grid">{children}</main>
+					<Toaster />
+				</ThemeProvider>
 			</body>
 		</html>
 	);
