@@ -138,7 +138,7 @@ export default function SignupFormDialog({
 								name="displayName"
 								render={({ field }) => (
 									<FormItem>
-										<FormLabel>Display name</FormLabel>
+										<FormLabel>Name</FormLabel>
 										<FormControl>
 											<Input placeholder=":o" {...field} />
 										</FormControl>

@@ -21,6 +21,7 @@ export async function POST(request: Request) {
 		const content = JSON.parse(formData.get("content") as string);
 		const uid = formData.get("uid") as string;
 		const title = formData.get("title") as string;
+		const draft = formData.get("draft") as string;
 		if (token === null || content === null) {
 			return Response.json({}, { status: 400 });
 		}
@@ -33,15 +34,28 @@ export async function POST(request: Request) {
 		}
 		const username = uidref.data().username;
 		const date = new Date();
-		const docRef = await addDoc(collection(db, "blogs"), {
-			title: title,
-			content,
-			authorId: doc(db, "users", username),
-			createdAt: date,
-		});
-		await updateDoc(doc(db, "users", username), {
-			publishedPosts: arrayUnion({ ref: docRef, title: title, date: date }),
-		});
+		let docRef;
+		if (draft === "false") {
+			docRef = await addDoc(collection(db, "blogs"), {
+				title: title,
+				content,
+				authorId: doc(db, "users", username),
+				createdAt: date,
+			});
+			await updateDoc(doc(db, "users", username), {
+				publishedPosts: arrayUnion({ ref: docRef, title: title, date: date }),
+			});
+		} else {
+			docRef = await addDoc(collection(db, "drafts"), {
+				title: title,
+				content,
+				authorId: doc(db, "users", username),
+				createdAt: date,
+			});
+			await updateDoc(doc(db, "users", username), {
+				draftPosts: arrayUnion({ ref: docRef, title: title, date: date }),
+			});
+		}
 
 		// console.log("Document written with ID: ", docRef.id);
 

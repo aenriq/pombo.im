@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Editor } from "@tiptap/core";
+import type { Editor } from "@tiptap/core";
 import {
 	Select,
 	SelectContent,

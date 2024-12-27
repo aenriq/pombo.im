@@ -1,9 +1,9 @@
 "use client";
 import { Separator } from "@/components/ui/separator";
 import { ReloadIcon } from "@radix-ui/react-icons";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 type posts = {
 	title: string;
