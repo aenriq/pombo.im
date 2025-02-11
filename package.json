@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "next": "^15.1.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "name": "pombo.im",
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "version": "1.1.0",
+  "main": "index.js",
+  "devDependencies": {
+    "@types/node": "22.13.1",
+    "@types/react": "19.0.8",
+    "typescript": "5.7.3"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aenriq/pombo.im.git"
+  },
+  "author": "aenriq",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aenriq/pombo.im/issues"
+  },
+  "homepage": "https://github.com/aenriq/pombo.im#readme"
+}
