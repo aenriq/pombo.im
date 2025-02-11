@@ -1,3 +1,4 @@
+import { EditorWrapper } from "@components/editor/Editor";
 export default function Page() {
-	return <h1>Hello, Next.js!</h1>;
+	return <EditorWrapper />;
 }
