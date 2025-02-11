@@ -121,7 +121,7 @@ main {
 
 @media screen and (max-width: 768px) {
 	main {
-		padding: 64px 0px;
+		padding: 32px 0px;
 	}
 
 	.main-grid {
