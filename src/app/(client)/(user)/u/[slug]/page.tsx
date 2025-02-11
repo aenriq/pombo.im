@@ -52,12 +52,12 @@ export default function Page({ params }: { params: { slug: string } }) {
 	return (
 		<>
 			{!response ? (
-				<div className="flex flex-col items-center justify-center grid2">
+				<div className="flex flex-col items-center justify-center col-[2]">
 					<ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
 				</div>
 			) : (
 				<>
-					<div className="grid1">
+					<div className="col-[1]">
 						<div className="flex flex-col justify-center">
 							{/* <Image
 									src={response?.photoURL}
@@ -72,7 +72,7 @@ export default function Page({ params }: { params: { slug: string } }) {
 							</p>
 						</div>
 					</div>
-					<div className="grid2">{postList(response.publishedPosts)}</div>
+					<div className="col-[2]">{postList(response.publishedPosts)}</div>
 				</>
 			)}
 		</>

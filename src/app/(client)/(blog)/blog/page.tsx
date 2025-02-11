@@ -5,7 +5,7 @@ import useAuth from "@/lib/useAuth";
 export default function Home() {
 	return (
 		<>
-			<div className="grid2">
+			<div className="col-[2]">
 				<Tiptap />
 			</div>
 		</>

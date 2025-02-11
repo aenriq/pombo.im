@@ -31,7 +31,7 @@ export default function Home() {
 
 	return (
 		<>
-			<div className="flex flex-col items-center justify-center grid2">
+			<div className="flex flex-col items-center justify-center col-[2]">
 				{loading ? (
 					<ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
 				) : user ? (

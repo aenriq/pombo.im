@@ -32,7 +32,7 @@ export default function Page({ params }: { params: { slug: string } }) {
 	return (
 		<>
 			{!response ? (
-				<div className="flex flex-col items-center justify-center grid2">
+				<div className="flex flex-col items-center justify-center col-[2]">
 					<ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
 				</div>
 			) : (
@@ -48,7 +48,7 @@ export default function Page({ params }: { params: { slug: string } }) {
 							<BreadcrumbPage>{response?.title}</BreadcrumbPage>
 						</BreadcrumbList>
 					</Breadcrumb>
-					<div className="grid2">
+					<div className="col-[2]">
 						<h1 className="font-bold px-3 text-5xl py-2">{response.title}</h1>
 						<Separator orientation="horizontal" className="w-full" />
 						<EditorContent editor={editor} />
