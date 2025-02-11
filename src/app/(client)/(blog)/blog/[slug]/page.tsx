@@ -37,7 +37,7 @@ export default function Page({ params }: { params: { slug: string } }) {
 				</div>
 			) : (
 				<>
-					<Breadcrumb>
+					<Breadcrumb className="hidden sm:block">
 						<BreadcrumbList>
 							<BreadcrumbItem>
 								<BreadcrumbLink href={`/u/${response?.username}`}>

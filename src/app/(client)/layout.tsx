@@ -22,7 +22,9 @@ export default function RootLayout({
 					enableSystem
 					disableTransitionOnChange
 				>
-					<main className="main-grid">{children}</main>
+					<main className="sm:grid sm:grid-cols-contentLayout sm:gap-x-6 sm:items-start">
+						{children}
+					</main>
 					<Toaster />
 				</ThemeProvider>
 			</body>

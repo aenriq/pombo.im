@@ -123,6 +123,12 @@ main {
 	main {
 		padding: 64px 0px;
 	}
+
+	.main-grid {
+		display: flex;
+		-moz-column-gap: 24px;
+		align-items: flex-start;
+	}
 }
 
 .main-grid {
