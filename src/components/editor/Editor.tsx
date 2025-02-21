@@ -3,6 +3,8 @@ import { Editor, rootCtx } from "@milkdown/kit/core";
 import { nord } from "@milkdown/theme-nord";
 import { Milkdown, MilkdownProvider, useEditor } from "@milkdown/react";
 import { commonmark } from "@milkdown/kit/preset/commonmark";
+import { gfm } from "@milkdown/preset-gfm";
+import Toolbar from "./Toolbar";
 
 const MilkdownEditor: React.FC = () => {
 	const { editor } = useEditor((root) =>
@@ -12,6 +14,7 @@ const MilkdownEditor: React.FC = () => {
 				ctx.set(rootCtx, root);
 			})
 			.use(commonmark)
+			.use(gfm)
 	);
 
 	return <Milkdown />;
@@ -21,6 +24,7 @@ export const EditorWrapper: React.FC = () => {
 	return (
 		<MilkdownProvider>
 			<div>Milkdown Editor</div>
+			<Toolbar />
 			<MilkdownEditor />
 		</MilkdownProvider>
 	);
