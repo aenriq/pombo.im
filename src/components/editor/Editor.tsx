@@ -1,31 +1,21 @@
-"use client";
-import { Editor, rootCtx } from "@milkdown/kit/core";
-import { nord } from "@milkdown/theme-nord";
+'use client';
+import { Crepe } from "@milkdown/crepe";
 import { Milkdown, MilkdownProvider, useEditor } from "@milkdown/react";
-import { commonmark } from "@milkdown/kit/preset/commonmark";
-import { gfm } from "@milkdown/preset-gfm";
-import Toolbar from "./Toolbar";
+import "@milkdown/crepe/theme/common/style.css";
+import "@milkdown/crepe/theme/frame.css";
 
-const MilkdownEditor: React.FC = () => {
-	const { editor } = useEditor((root) =>
-		Editor.make()
-			.config(nord)
-			.config((ctx) => {
-				ctx.set(rootCtx, root);
-			})
-			.use(commonmark)
-			.use(gfm)
-	);
+const CrepeEditor: React.FC = () => {
+	const { get } = useEditor((root) => {
+		return new Crepe({ root });
+	});
 
 	return <Milkdown />;
 };
 
-export const EditorWrapper: React.FC = () => {
+export const MilkdownEditorWrapper: React.FC = () => {
 	return (
 		<MilkdownProvider>
-			<div>Milkdown Editor</div>
-			<Toolbar />
-			<MilkdownEditor />
+			<CrepeEditor />
 		</MilkdownProvider>
 	);
 };
