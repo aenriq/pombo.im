@@ -1,9 +1,0 @@
-@import "tailwindcss";
-
-:root {
-	--content-width: 640px;
-	/* --content-grid: 192px var(--content-width) 192px; */
-	--content-grid: 192px 640px 192px;
-}
-
-@theme {}
