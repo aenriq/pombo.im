@@ -1,16 +1,1 @@
-{
-	"tailwindCSS.experimental.configFile": "src/styles/globals.css",
-	"editor.quickSuggestions": {
-		"strings": true
-	},
-	"tailwindCSS.experimental.classRegex": [
-		"class:\\s*?[\"'`]([^\"'`]*).*?,",
-		"className:\\s*?[\"'`]([^\"'`]*).*?,"
-	],
-	"tailwindCSS.includeLanguages": {
-		"typescript": "javascript",
-		"typescriptreact": "javascript"
-	},
-	"tailwindCSS.validate": true,
-	"css.validate": false
-}
+{}
